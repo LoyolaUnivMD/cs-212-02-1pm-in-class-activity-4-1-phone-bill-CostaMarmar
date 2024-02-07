@@ -1,1 +1,22 @@
-THINK before you code...
+import Scanner
+import Decimalformat
+
+1. Ask the user what package they have
+    1a. strip the user input of spaces and set it to lowercase
+    1b. While the user does not input Green, Blue, Or Purple, tell the user it is invalid and ask again
+2. initialize boolean variable isOverData equal to false
+3. initialize boolean variable hasCoupon equal to false
+4. if package is green, ask user if they have a coupon
+    4a. if user does have a coupon, set hasCoupon equal to true
+5. ask user how many GBs of data they used
+    5a. while data used is a number below 0, ask the user again for a valid number
+6. initialize cost variable to 0
+7. if package is green, set cost to 49.99
+    7a. if dataUsed is greater than 2, subtract 2 from dataUsed, multiply that number by 15 and add
+    that number to cost
+    7b. if hasCoupon is true and cost is greater than 75, subtract 20 from cost
+8. Otherwise if package is blue, set cost to 70
+    8a. if dataUsed is greater than 4, subtract 4 from dataUsed, multiply that number by 10 and add
+    that number to cost
+9. Otherwise set cost to 99.95
+10. print out the final cost of the bill to the user and format using decimalFormat
