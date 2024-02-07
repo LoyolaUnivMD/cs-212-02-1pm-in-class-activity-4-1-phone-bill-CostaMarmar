@@ -1,6 +1,6 @@
 // Programmers:  Costa Marmaras
 // Course:  CS 212
-// Due Date: 2/9/24
+// Due Date: 2/8/24
 // In class assesment: Phone Bill
 // Problem Statement: Create a program that will calculate a users phone bill based on their package
 //                      and data used
