@@ -1,1 +1,8 @@
-Test cases go here. 
+package	    gb used	    has coupon	output
+green	    1	        No	        49.99
+green	    4	        yes	        59.99
+blue	    1	        N/A	        70
+blue	    6	        N/A	        90
+purple	    10	        n/a	        99.95
+greeeeen	N/A	        N/A	        Please input a valid package
+blue	    -2	        N/A	        Please input a valid amount of data used

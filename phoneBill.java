@@ -19,8 +19,7 @@ class HelloWorld {
         System.out.println("This program will calculate your phone bill based on your package");
         DecimalFormat twoDigits = new DecimalFormat("$.00");
 
-        //initialize the needed boolean variables
-        boolean isOverData = false;
+        //initialize the needed boolean variable
         boolean hasCoupon = false;
 
         //ask the user what package they have and strips and sets it to lower case
@@ -45,11 +44,17 @@ class HelloWorld {
                 System.out.println("That is not a valid input\nPlease input a valid input (Y/N)");
                 coup = input.nextLine().strip().toUpperCase();
             }
+            if(coup.equals("Y"))
+            {
+                hasCoupon = true;
+            }
         }
-        /*if elif ternary operator to find the max GBs of data used (if its purple it is defaulted to 0
-                because data is not accounted in purple and therefore could be any number
+        /*if elif ternary operator to find the max GBs of data and the base cost of the phone plan
+         (if its purple it is defaulted to 0
+         because data is not accounted in purple and therefore could be any number
          */
         int maxGB = (phonePack.equals("green"))? 2 : phonePack.equals("blue")? 4 : 0;
+        double cost = (phonePack.equals("green"))? 49.99 : phonePack.equals("blue")? 70.00 : 99.95;
 
         //Ask the user how many GBs of data they used and make sure that it is above 0
         System.out.println("How many GBs of data did you use this month?");
@@ -60,6 +65,28 @@ class HelloWorld {
             gbUsed = input.nextInt();
         }
 
-
+        if(phonePack.equals("green"))
+        {
+            if(gbUsed > maxGB)
+            {
+                gbUsed -= 2;
+                gbUsed *= 15;
+                cost += gbUsed;
+            }
+            if(hasCoupon)
+            {
+                cost -= 20;
+            }
+        }
+        else if(phonePack.equals("blue"))
+        {
+            if(gbUsed > maxGB)
+            {
+                gbUsed -= 4;
+                gbUsed *= 10;
+                cost += gbUsed;
+            }
+        }
+        System.out.println("Your phone bill for this month will be: " + twoDigits.format(cost));
     }
 }
